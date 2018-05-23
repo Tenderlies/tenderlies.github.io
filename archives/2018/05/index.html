@@ -5,13 +5,23 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -74,21 +84,23 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Tenderlies的博客" type="application/atom+xml" />
 
 
 
 
 
-<meta name="description" content="Tenderlies的个人博客">
+
+<meta name="description" content="没有敌意的坚决，不含诱惑的深情。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tenderlies">
+<meta property="og:title" content="Tenderlies的博客">
 <meta property="og:url" content="https://tenderlies.github.io/archives/2018/05/index.html">
-<meta property="og:site_name" content="Tenderlies">
-<meta property="og:description" content="Tenderlies的个人博客">
-<meta property="og:locale" content="default">
+<meta property="og:site_name" content="Tenderlies的博客">
+<meta property="og:description" content="没有敌意的坚决，不含诱惑的深情。">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tenderlies">
-<meta name="twitter:description" content="Tenderlies的个人博客">
+<meta name="twitter:title" content="Tenderlies的博客">
+<meta name="twitter:description" content="没有敌意的坚决，不含诱惑的深情。">
 
 
 
@@ -96,15 +108,15 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -124,7 +136,7 @@
 
 
 
-  <title>Archive | Tenderlies</title>
+  <title>归档 | Tenderlies的博客</title>
   
 
 
@@ -146,7 +158,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -164,12 +176,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tenderlies</span>
+        <span class="site-title">Tenderlies的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">Tenderlies</p>
+        <p class="site-subtitle"></p>
       
   </div>
 
@@ -194,7 +206,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -204,7 +226,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -217,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            搜索
           </a>
         </li>
       
@@ -237,7 +269,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
+             placeholder="搜索..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -274,7 +306,7 @@
         
           
         
-        Um..! 1 post. Keep on posting.
+        嗯..! 目前共计 1 篇日志。 继续努力。
       </span>
 
       
@@ -293,12 +325,12 @@
 
         
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-Github Pages" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/05/22/hello-blog/hello-bloguncategorized" itemprop="url">
+            <a class="post-title-link" href="/2018/05/22/hello-blog/hello-blog/建站/" itemprop="url">
               
                 <span itemprop="name">Hello Blog</span>
               
@@ -361,8 +393,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description">Tenderlies的个人博客</p>
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars0.githubusercontent.com/u/21984442?s=40&v=4"
+                alt="Tenderlies" />
+            
+              <p class="site-author-name" itemprop="name">Tenderlies</p>
+              <p class="site-description motion-element" itemprop="description">没有敌意的坚决，不含诱惑的深情。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -373,11 +409,20 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -385,16 +430,84 @@
           </nav>
 
           
-
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenderlies" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
           
 
           
+          
+
+          <div id="aplayer" class="aplayer"></div>
+<script src="/js/src/APlayer.min.js"></script>
+<script type="text/javascript">
+var ap = new APlayer({
+    element: document.getElementById('aplayer'),                       
+    narrow: false,                                                     
+    autoplay: false,                                                    
+    showlrc: 0,                                                        
+    mutex: true,                                                      
+    theme: '#e6d0b2',                                                  
+    mode: 'circulation', // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+    preload: 'metadata', // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    listmaxheight: '513px',  // Optional, max height of play list
+    music: [
+	    {                                                           
+	        title: 'Heart Of Gold',                                          		
+	        author: 'Neil Young',                          						
+	        url: '/static/music/Heart Of Gold.flac',  							   
+	        pic: 'https://p1.music.126.net/GfQJgh87gppO2XeDINJpkQ==/5705365836620473.jpg',  
+	        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'                   
+	    },
+		{                                                         
+	        title: 'Joey',                                          		
+	        author: 'Concrete Blonde',                          						
+	        url: '/static/music/Joey.mp3',  							   
+	        pic: 'https://p1.music.126.net/z19gg6gxcD5qieeIoJbcLA==/801543976702546.jpg',  
+	        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'                   
+	    },
+		{                                                         
+	        title: '理想三旬',                                          		
+	        author: '陈鸿宇',                          						
+	        url: '/static/music/理想三旬.flac',  							   
+	        pic: 'https://p1.music.126.net/cqTTEPAaxXG3cOwaE4E_-g==/109951163104103366.jpg',  
+	        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'                   
+	    },
+		{                                                         
+	        title: '借我',                                          		
+	        author: '谢春花',                          						
+	        url: '/static/music/借我.flac',  							   
+	        pic: 'https://p1.music.126.net/Eg4cy0_HIF2nrX2gMCsWkQ==/17967119509636556.jpg?',  
+	        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'                   
+	    },
+		{                                                         
+	        title: '后来',                                          		
+	        author: '刘若英',                          						
+	        url: '/static/music/后来.flac',  							   
+	        pic: 'https://p1.music.126.net/gsvjb3PtPvYjcwvytyuDPw==/109951163200281598.jpg',  
+	        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'                   
+	    }
+	]
+});
+</script>
 
         </div>
       </section>
@@ -413,17 +526,26 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">Tenderlies</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+-->
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
 
 
 
@@ -431,7 +553,16 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+<!--
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共1.1k字</span>
+</div>
+
+
+
 
 
 
@@ -451,6 +582,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -477,6 +610,8 @@
 
   
 
+
+  
 
 
 
@@ -516,6 +651,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -924,5 +1064,6 @@
 
   
 
+  <script type="text/javascript" src="http://7u2ss1.com1.z0.glb.clouddn.com/love.js"></script>
 </body>
 </html>
