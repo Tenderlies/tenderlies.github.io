@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6bc9;
+  background: #b5ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2933,6 +2933,15 @@ hr {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+code {
+  color: #fff !important;
+  background: #272822 !important;
+}
+.highlight,
+pre {
+  background-color: #272822 !important;
+  color: #fff;
 }
 .aplayer-list ol li {
 /*列表底色      颜色代码 透明度 */
