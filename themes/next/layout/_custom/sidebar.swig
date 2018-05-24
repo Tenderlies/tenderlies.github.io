@@ -1,5 +1,5 @@
 <div id="aplayer" class="aplayer"></div>
-<script src="/js/src/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.6.0/dist/APlayer.min.js"></script>
 <script type="text/javascript">
 var ap = new APlayer({
     element: document.getElementById('aplayer'),                       
@@ -9,8 +9,9 @@ var ap = new APlayer({
     mutex: true,                                                      
     theme: '#e6d0b2',                                                  
     mode: 'circulation', // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
-    preload: 'metadata', // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+    preload: 'auto', // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
     listmaxheight: '513px',  // Optional, max height of play list
+    listFolded: true,
     music: [
 	    {                                                           
 	        title: 'Heart Of Gold',                                          		

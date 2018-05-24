@@ -1,7 +1,7 @@
 ---
 title: Hello Blog
 type: "Github Pages"
-categories: 建站
+categories: Github Pages
 ---
 这是我的第一个博客，这是一个搭建在GitHub上的博客。
 这种静态博客框架的主流有两种：[Jekyll][1]与[Hexo][2]。这两个框架都是使用[Markdown](https://daringfireball.net/projects/markdown/)（一种纯文本格式语法）解析文章，然后生成静态网页。
@@ -102,13 +102,6 @@ ps:Hexo的安装、目录结构、配置就看这个[链接][2]吧。
     这是第二段代码
         我还可以缩进哦
 {% endcodeblock %}
-
-写法如下  👇：
-
-    > 这个一个引用区块，需要在内容前加上> 。
-    > 可以在每一行都写上> ,也可以在一段的多行文字上加上一个> 。很明显这段文字肯定不够长，那么再多说些废话吧。
-    >> 试一试嵌套引用。
-
 
 ### 分割线
 样式如下：

@@ -88,6 +88,6 @@
   {% include '_third-party/mathjax.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
-  <script type="text/javascript" src="http://7u2ss1.com1.z0.glb.clouddn.com/love.js"></script>
+  <script type="text/javascript" src="https://7u2ss1.com1.z0.glb.clouddn.com/love.js"></script>
 </body>
 </html>
