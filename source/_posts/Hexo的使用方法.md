@@ -13,7 +13,7 @@ categories: Github Pages
     npm install -g hexo-cli
 
 ## 配置站点
-使用Git克隆你的GitPages项目，文件夹名为：`tenderlies.github.io`
+使用Git克隆你的Github Pages项目，文件夹名为：`tenderlies.github.io`
 打开该文件夹，在路径上执行：`cmd`
 执行该命令初始化站点文件结构
 
@@ -35,7 +35,7 @@ categories: Github Pages
 </code></pre>
 * __清除缓存文件和已生成的静态文件__
 <pre><code>
-    hexo c(lean)
+    hexo clean
 </code></pre>
 * __新建一篇文章__
 <pre><code>
