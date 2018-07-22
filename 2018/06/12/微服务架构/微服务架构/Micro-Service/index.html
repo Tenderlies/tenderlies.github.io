@@ -98,12 +98,17 @@
 <meta property="og:site_name" content="Tenderlies的博客">
 <meta property="og:description" content="微服务架构简介微服务是一种系统架构风格。想要了解微服务，最好阅读下面这位的大佬的博客，此文内容翻译自该博客。Martin Fowler : https://martinfowler.com/articles/microservices.html 简而言之，微服务架构风格是一种将单个应用程序作为一套（拆分为多个）小型服务开发的方法，每个小型服务都在其自己的进程中运行，并与轻量级机制（通常是HTTP资">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://martinfowler.com/articles/microservices/images/sketch.png">
+<meta property="og:image" content="https://martinfowler.com/articles/microservices/images/conways-law.png">
+<meta property="og:image" content="https://martinfowler.com/articles/microservices/images/PreferFunctionalStaffOrganization.png">
+<meta property="og:image" content="https://martinfowler.com/articles/microservices/images/decentralised-data.png">
 <meta property="og:image" content="https://martinfowler.com/articles/microservices/images/basic-pipeline.png">
-<meta property="og:updated_time" content="2018-07-22T08:41:13.306Z">
+<meta property="og:image" content="https://martinfowler.com/articles/microservices/images/micro-deployment.png">
+<meta property="og:updated_time" content="2018-07-22T09:05:30.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微服务架构">
 <meta name="twitter:description" content="微服务架构简介微服务是一种系统架构风格。想要了解微服务，最好阅读下面这位的大佬的博客，此文内容翻译自该博客。Martin Fowler : https://martinfowler.com/articles/microservices.html 简而言之，微服务架构风格是一种将单个应用程序作为一套（拆分为多个）小型服务开发的方法，每个小型服务都在其自己的进程中运行，并与轻量级机制（通常是HTTP资">
-<meta name="twitter:image" content="https://martinfowler.com/articles/microservices/images/basic-pipeline.png">
+<meta name="twitter:image" content="https://martinfowler.com/articles/microservices/images/sketch.png">
 
 
 
@@ -439,6 +444,7 @@
 <p><code>Such a monolithic server is a natural way to approach building such a system. All your logic for handling a request runs in a single process, allowing you to use the basic features of your language to divide up the application into classes, functions, and namespaces. With some care, you can run and test the application on a developer&#39;s laptop, and use a deployment pipeline to ensure that changes are properly tested and deployed into production. You can horizontally scale the monolith by running many instances behind a load-balancer.</code></p>
 <p>整体应用程序相当不错，但越来越多的人感到沮丧 — 尤其是越来越多的应用程序部署到云中。变更周期被绑定在一起  — 即使只对应用程序的一小部分进行更改，仍需要重新构建和部署整个整体。随着时间的推移，通常很难保持良好的模块化结构，使得一个模块的变更很难不影响到其它模块。扩展就需要扩展整个应用程序，而不能只扩展程序中更需要扩展的模块。</p>
 <p><code>Monolithic applications can be successful, but increasingly people are feeling frustrations with them - especially as more applications are being deployed to the cloud . Change cycles are tied together - a change made to a small part of the application, requires the entire monolith to be rebuilt and deployed. Over time it&#39;s often hard to keep a good modular structure, making it harder to keep changes that ought to only affect one module within that module. Scaling requires scaling of the entire application rather than parts of it that require greater resource.</code></p>
+<p><img src="https://martinfowler.com/articles/microservices/images/sketch.png" alt="Sketch"></p>
 <p>这种挫败感导致了微服务架构风格的出现：将应用程序构建为一套服务。除了可独立部署和扩展之外，每种服务还提供了一个牢固的模块边界，甚至允许用不同的编程语言编写不同的服务。它们也可以由不同的团队管理。</p>
 <p><code>These frustrations have led to the microservice architectural style: building applications as suites of services. As well as the fact that services are independently deployable and scalable, each service also provides a firm module boundary, even allowing for different services to be written in different programming languages. They can also be managed by different teams .</code></p>
 <p>我们并不认为微服务风格是什么新东西，它的根源至少可以追溯到Unix的设计原则。但我们确实认为考虑微服务体系结构的人不多，如果他们使用它，许多软件开发都会变得更好。</p>
@@ -463,8 +469,10 @@
 <p><code>When looking to split a large application into parts, often management focuses on the technology layer, leading to UI teams, server-side logic teams, and database teams. When teams are separated along these lines, even simple changes can lead to a cross-team project taking time and budgetary approval. A smart team will optimise around this and plump for the lesser of two evils - just force the logic into whichever application they have access to. Logic everywhere in other words. This is an example of Conway&#39;s Law in action.</code></p>
 <pre><code>Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization&apos;s communication structure.
 -- Melvyn Conway, 1967
-</code></pre><p>微服务的划分方法不同，它倾向围绕业务能力组织来切割服务。此类服务为该业务领域采用广泛的软件实现，包括用户界面，持久化存储和任何外部协作。因此，团队是跨职能的，包含开发过程所要求的所有技能：用户体验、数据库和项目管理。</p>
+</code></pre><p><img src="https://martinfowler.com/articles/microservices/images/conways-law.png" alt="Conways Law"></p>
+<p>微服务的划分方法不同，它倾向围绕业务能力组织来切割服务。此类服务为该业务领域采用广泛的软件实现，包括用户界面，持久化存储和任何外部协作。因此，团队是跨职能的，包含开发过程所要求的所有技能：用户体验、数据库和项目管理。</p>
 <p><code>The microservice approach to division is different, splitting up into services organized around business capability. Such services take a broad-stack implementation of software for that business area, including user-interface, persistant storage, and any external collaborations. Consequently the teams are cross-functional, including the full range of skills required for the development: user-experience, database, and project management.</code></p>
+<p><img src="https://martinfowler.com/articles/microservices/images/PreferFunctionalStaffOrganization.png" alt="PreferFunctionalStaffOrganization"></p>
 <p><a href="http://www.comparethemarket.com就是一家以这种方式组建的公司。跨职能团队负责构建和运营每个产品，每个产品分为多个独立的服务，服务间通过消息总线进行通信。" target="_blank" rel="noopener">www.comparethemarket.com就是一家以这种方式组建的公司。跨职能团队负责构建和运营每个产品，每个产品分为多个独立的服务，服务间通过消息总线进行通信。</a></p>
 <p><code>One company organised in this way is www.comparethemarket.com. Cross functional teams are responsible for building and operating each product and each product is split out into a number of individual services communicating via a message bus.</code></p>
 <p>大型的整体应用程序也可以按照业务功能进行模块化，尽管这种情况不常见。当然，我们可以敦促一个构建整体应用程序的大型团队，按业务线来分割自己。我们已经看到的主要问题是，它们往往围绕太多的前后关系进行组织。如果整体应用程序跨越很多模块边界，这不适合团队的个别成员短期记忆。此外，我们发现模块化需要大量的强制规范。服务组件所需的更明确的分离使得保持团队边界清晰更容易。</p>
@@ -511,6 +519,7 @@
 <p><code>This issue is common between applications, but can also occur within applications, particular when that application is divided into separate components. A useful way of thinking about this is the Domain-Driven Design notion of Bounded Context. DDD divides a complex domain up into multiple bounded contexts and maps out the relationships between them. This process is useful for both monolithic and microservice architectures, but there is a natural correlation between service and context boundaries that helps clarify, and as we describe in the section on business capabilities, reinforce the separations.</code></p>
 <p>除了关于概念模型的分散决策之外，微服务还分散了数据存储决策。虽然单个应用程序更喜欢单个逻辑数据库来存储持久性数据，但企业通常更喜欢跨越一系列应用程序的单个数据库——其中许多决策是根据供应商的商业许可模式推动的。微服务更喜欢让每个服务管理自己的数据库，可以是相同数据库技术的不同实例，也可以是完全不同的数据库系统——这种方法称为<strong>混合持久化</strong>。你可以在整体风格中使用<strong>混合持久化</strong>，但它在微服务中更常出现。</p>
 <p><code>As well as decentralizing decisions about conceptual models, microservices also decentralize data storage decisions. While monolithic applications prefer a single logical database for persistant data, enterprises often prefer a single database across a range of applications - many of these decisions driven through vendor&#39;s commercial models around licensing. Microservices prefer letting each service manage its own database, either different instances of the same database technology, or entirely different database systems - an approach called Polyglot Persistence. You can use polyglot persistence in a monolith, but it appears more frequently with microservices.</code></p>
+<p><img src="https://martinfowler.com/articles/microservices/images/decentralised-data.png" alt="Decentralised Data"></p>
 <p>跨微服务分散数据责任对管理更新有影响。处理更新的常用方法是在更新多个资源时使用事务来保证一致性。这种方法通常用于整体结构中。</p>
 <p><code>Decentralizing responsibility for data across microservices has implications for managing updates. The common approach to dealing with updates has been to use transactions to guarantee consistency when updating multiple resources. This approach is often used within monoliths.</code></p>
 <p>使用这样的事务有助于保持一致性，但会产生显著的时间耦合，这在多个服务中是有问题的。众所周知，分布式事务很难实现，因此微服务架构强调服务之间的无事务协调，明确认识到一致性可能只是最终的一致性，而问题则通过补偿操作来处理。</p>
@@ -528,6 +537,7 @@
 <p><code>A monolithic application will be built, tested and pushed through these environments quite happlily. It turns out that once you have invested in automating the path to production for a monolith, then deploying more applications doesn&#39;t seem so scary any more. Remember, one of the aims of CD is to make deployment boring, so whether its one or three applications, as long as its still boring it doesn&#39;t matter.</code></p>
 <p>我们看到团队使用广泛的基础设施自动化的另一个领域是管理生产中的微服务。相比之下，只要部署很无聊，整体应用和微服务之间没有太大的区别，尽管发布的环境可能会截然不同。</p>
 <p><code>Another area where we see teams using extensive infrastructure automation is when managing microservices in production. In contrast to our assertion above that as long as deployment is boring there isn&#39;t that much difference between monoliths and microservices, the operational landscape for each can be strikingly different.</code></p>
+<p><img src="https://martinfowler.com/articles/microservices/images/micro-deployment.png" alt="Micro Deployment"></p>
 <h3 id="容错性设计"><a href="#容错性设计" class="headerlink" title="容错性设计"></a>容错性设计</h3><p>使用服务作为组件的一个结果是，应用程序需要有能够容忍服务故障的设计。任何服务都可能因为供应商不可用而故障，客户端必须尽可能优雅地对此做出响应。与整体风格相比，这是一个缺点，因为它引入了额外的复杂性来处理它。这让微服务团队不断反思服务失败时对用户体验的影响。Netflix的Simian Army有引发服务故障、甚至在工作日引发数据中心故障的功能，以便测试应用程序的弹性和监控。</p>
 <p><code>A consequence of using services as components, is that applications need to be designed so that they can tolerate the failure of services. Any service call could fail due to unavailability of the supplier, the client has to respond to this as gracefully as possible. This is a disadvantage compared to a monolithic design as it introduces additional complexity to handle it. The consequence is that microservice teams constantly reflect on how service failures affect the user experience. Netflix&#39;s Simian Army induces failures of services and even datacenters during the working day to test both the application&#39;s resilience and monitoring.</code></p>
 <p>这种生产中的自动化测试足以让大多数运维团队正常的上下班。这并不是说整体风格不具备复杂的监控设置，只是在我们的经验中它不常见。</p>
